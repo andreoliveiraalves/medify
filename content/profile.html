@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medify || My Profile</title>
+
+
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" type="text/css" href="../css/profile.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet" />
+    <link href="//db.onlinewebfonts.com/c/ef6bdf5ef216552c7e9869841e891ca0?family=Arial+Rounded+MT+Bold" rel="stylesheet" type="text/css" />
+
+    <!-- CDN / LIBRARIES -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">medify</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+            <i class="fas fa-bars" style="color:#fff; font-size:30px;"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html">Find a doctor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../content/about.html">About us</a>
+                </li>
+            </ul>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle profile-nav" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                </button>
+                <div id="dropdownElements" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a id="prfreg" class="dropdown-item" href="#"></a>
+                    <a id="loginout" class="dropdown-item" href="#"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row profile-form">
+            <div class="col-lg-3 col-md-4 col-sm-5">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"><i class="fas fa-user" style="font-size: 18px;"></i>  Personal Info</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile"><i class="fas fa-list-alt" style="font-size: 18px;"></i> Appointments</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages"><i class="fas fa-medal" style="font-size: 18px;"></i>  Achievements</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings"><i class="fas fa-wallet" style="font-size: 18px;"></i>  Wallet</a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-7">
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                        <div class="row personal-form">
+                            <div class="col-6">
+                                <h3>Personal Details</h3>
+                                <div class="row ml-auto">
+                                    <input type="text" id="usernameInput" class="form-control input-email" placeholder="Username">
+                                    <input type="text" id="fnameInput" class="form-control input-name" placeholder="Name">
+                                    <input type="text" id="lnameInput" class="form-control input-lastname" placeholder="Last Name">
+                                </div>
+                                <input type="email" id="emailInput" class="form-control input-email" placeholder="Email">
+                                <input type="text" id="phoneInput" class="form-control input-email" placeholder="Phone">
+                                <input type="text" id="addressInput" class="form-control input-email" placeholder="Address">
+                                <input type="password" class="form-control current-pass" id="currPassword" placeholder="Current password">
+                                <button onclick='document.getElementById("password").style.display = "block"; document.getElementById("btn-pass").style.display = "none";' class="btn btn-pass" id="btn-pass">Change Password</button>
+                                <div class="password" id="password" style="display: none;">
+                                    <input type="password" class="form-control current-pass" id="newPassword" placeholder="New Password">
+                                    <input type="password" class="form-control current-pass" id="newPasswordC" placeholder="Confirm New Password">
+                                </div>
+                                <div class="row col-12 pass-btns">
+                                    <button class="btn btn btn-pass btn-pass-confirm" id="updateUser">Update</button>
+                                </div>
+                            </div>
+                            <div class="medical-report col-6">
+                                <h3>Medical Report</h3>
+                                <h6>Diseases</h6>
+                                <input type="text" id="diseasesInput">
+                                <h6>Prescription Pills</h6>
+                                <input type="text" id="pillsInput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                        <div class="list-group" id="appointmentsList">
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-Acjeivements-list">
+                        <div class="achievementSep">
+                            <h1 id="xp">0 XP</h1>
+                        </div>
+                        <div id="badgesList" class="achievementSep">
+                            <h1>Badges</h1>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-wallet-list">
+                        <div class="achievementSep">
+                            <h1 id="coins"> <img src="../content/img/coin.png" style="height: 30px; width: auto; padding-right: 10px;"></h1>
+                            <input type="number" id="exXP" placeholder="XP Amount"><input type="number" id="exCoins" placeholder="Coins Amount" readonly>
+                            <button id="exchangeBtt">Exchange</button>
+                        </div>
+                        <div class="row" id="storeItems">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="page-footer font-small stylish-color-dark pt-4">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 mx-auto">
+
+                        <!-- Content -->
+                        <h5 class="footer-logo font-weight-bold text-uppercase mt-3 mb-4">medify</h5>
+                        <p>medify é uma aplicação web que te permitirá a receber uma consulta em sua casa. Um profissional de saúde espicializado no seu problema, está agora a um clique de distância de sua casa. </p>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 mx-auto">
+
+                        <!-- Links -->
+                        <h5 class="footer-head font-weight-bold text-uppercase mt-3 mb-4">Company</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="footer-anchor" href="/content/about.html">About us</a>
+                            </li>
+                            <li>
+                                <a class="footer-anchor" href="#!">Contact us</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 mx-auto">
+
+                        <!-- Links -->
+                        <h5 class="footer-head font-weight-bold text-uppercase mt-3 mb-4">Profissionals</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="footer-anchor" href="#!">Join our team</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- Grid row -->
+            </div>
+            <!-- Footer Links -->
+            <hr>
+
+            <!-- Social buttons -->
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <a href="https://www.youtube.com/watch?v=mO6nFn5ytVw&feature=youtu.be" class="btn-floating btn-gplus mx-1">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/NunoCosta13/Medify-II" class="btn-floating btn-li mx-1">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- Social buttons -->
+            <hr>
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">Copyright © 2020
+                <a class="footer-anchor" href="#"> medify</a>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+
+
+        <!-- JS CDN -->
+        <script src="https://kit.fontawesome.com/2d2a841d14.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <!-- SCRIPTS -->
+        <script src="../js/styling.js"></script>
+        <script type="module" src="../js/app.js"></script>
+        <script>
+            //TO RUN ON START AND CHECK IF USER IS LOGGED
+            if (!sessionStorage.loggedUser) {
+                location.href = "login.html";
+            } else if (JSON.parse(sessionStorage.loggedUser).username == "admin") {
+                location.href = "adminPanel.html";
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+.profile-form {
+    margin-top: 150px;
+}
+
+.pic-img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.profile-user {
+    font-size: 18px;
+    font-family: "Montserrat";
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.list-group-item.active {
+    background-color: rgb(200, 0, 0) !important;
+}
+
+.personal-form {
+    margin-left: 50px;
+}
+
+.personal-form>.col-6>h3 {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    border-radius: 0px;
+    outline: 0;
+    border-width: 0 0 1.5px;
+    border-color: rgb(200, 0, 0);
+    margin-bottom: 20px;
+}
+
+.form-control:focus {
+    box-shadow: none !important;
+    border-color: rgb(64, 64, 64)!important;
+    transition: ease-in-out 1.5s;
+}
+
+.input-name {
+    width: 30%;
+    margin-right: 29px
+}
+
+.input-lastname {
+    width: 30%;
+}
+
+.input-email {
+    width: 93%;
+}
+
+.btn-email {
+    background-color: rgb(200, 0, 0);
+    color: white;
+}
+
+.btn-pass {
+    margin-top: 10px;
+    background-color: rgb(200, 0, 0);
+    color: white;
+}
+
+.btn-pass:hover {
+    color: rgb(64, 64, 64);
+    transition: ease-in-out 0.2s;
+}
+
+.current-pass {
+    width: 69%;
+}
+
+.pass-btns {
+    margin-left: 60px;
+}
+
+#btn-pass-confirm {
+    margin-top: 10px;
+    background-color: rgb(200, 0, 0);
+    color: white;
+    margin-right: 5px;
+}
+
+#btn-pass-cancel {
+    margin-top: 10px;
+    background-color: rgb(200, 0, 0);
+    color: white;
+}
+
+.badgeImg {
+    width: 100px;
+    height: auto;
+}
+
+.achievementSep {
+    padding: 40px 0 20px 0;
+    border-bottom: 1px solid red;
+}
+
+@media(max-width:572px) {
+    .tab-content {
+        margin-top: 50px;
+    }
+}

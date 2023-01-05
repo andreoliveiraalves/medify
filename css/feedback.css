@@ -1,0 +1,53 @@
+.arrow {
+    color: rgb(64, 64, 64) !important;
+}
+
+.go_back {
+    color: rgb(64, 64, 64);
+}
+
+.go_back:hover {
+    text-decoration: none !important;
+    color: rgb(215, 0, 0);
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+.logos {
+    margin-top: 20px;
+}
+
+.info {
+    text-align: center;
+}
+
+.doctor_img {
+    padding: 0px !important;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.logo_word {
+    color: rgb(215, 0, 0);
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+}
+
+.form {
+    margin-top: 30px;
+}
+
+.form-control {
+    width: 50% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.btn_feedback {
+    background-color: rgb(215, 0, 0) !important;
+    color: white !important;
+    margin-left: auto !important;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}

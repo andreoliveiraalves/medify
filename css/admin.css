@@ -1,0 +1,98 @@
+ body {
+     overflow-x: hidden;
+ }
+ 
+ .left-side {
+     height: 100% !important;
+ }
+ 
+ .logos {
+     margin-top: 50px;
+ }
+ 
+ .logo-text {
+     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+     color: rgb(215, 0, 0);
+     font-size: 35px;
+     margin-left: 20px;
+     margin-top: 10px;
+ }
+ 
+ .logo-img {
+     margin-left: 30px;
+ }
+ 
+ .options {
+     margin-top: 70px;
+ }
+ 
+ .left-item {
+     color: rgb(215, 0, 0) !important;
+     margin-left: 10px;
+ }
+ 
+ .left-item:active {
+     outline: 0px none !important;
+     outline-width: thin!important;
+ }
+ 
+ .fas {
+     margin-right: 20px;
+ }
+ 
+ .top-table {
+     background-color: rgb(64, 64, 64);
+     color: white;
+ }
+ 
+ .profile-btn {
+     width: 43px;
+ }
+ 
+ .profile-btn:focus {
+     box-shadow: none !important;
+ }
+ 
+ .table-content {
+     margin-top: 70px;
+ }
+ 
+ .btn-link {
+     color: rgb(200, 0, 0) !important;
+ }
+ 
+ .btn-link:hover {
+     text-decoration: none !important;
+ }
+ 
+ .btn-link:focus {
+     text-decoration: none !important;
+ }
+ 
+ .create-btn {
+     margin-top: 15px;
+     background: rgb(200, 0, 0);
+     color: white;
+ }
+ 
+ .panel {
+     margin-top: 70px;
+     background: rgb(245, 245, 245);
+ }
+ 
+ .logo-dash {
+     font-size: 25px;
+     color: rgb(200, 0, 0);
+ }
+ 
+ .dash-num {
+     font-size: 50px;
+     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+     margin-left: -20px;
+ }
+ 
+ .dash-text {
+     font-size: 18px;
+     font-weight: bold;
+     color: rgb(190, 190, 190);
+ }

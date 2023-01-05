@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MEDIFY || Admin Panel</title>
+
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/loading.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet" />
+    <link href="//db.onlinewebfonts.com/c/ef6bdf5ef216552c7e9869841e891ca0?family=Arial+Rounded+MT+Bold" rel="stylesheet" type="text/css" />
+
+    <!-- CDN / LIBRARIES -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-2 left-side">
+            <div class="row logos">
+                <img class="logo-img" src="img/logo.png" width="30%">
+                <p class="logo-text">medify</p>
+            </div>
+            <div class="options">
+                <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action left-item" id="list-dashboard-list" data-toggle="list" href="#list-dash" role="tab"><i class="fas fa-chart-line"></i>Dashboard</a>
+                    <a class="list-group-item list-group-item-action left-item" id="list-user-list" data-toggle="list" href="#list-user" role="tab"><i class="fas fa-user"></i>Users</a>
+                    <a class="list-group-item list-group-item-action left-item" id="list-doctor-list" data-toggle="list" href="#list-doctor" role="tab"><i class="fas fa-user-md"></i>Doctors</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-10">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-dash" role="tabpanel">
+                    <div class="panel container">
+                        <div class="row">
+                            <div class="col-6 text-center">
+                                <i class="fas fa-users logo-dash mt-3"></i>
+                                <p class="dash-num" id="usersAm">XX</p>
+                                <p class="dash-text">Number of users</p>
+                            </div>
+                            <div class="col-6 text-center">
+                                <i class="fas fa-users logo-dash mt-3"></i>
+                                <p class="dash-num" id="docsAm">XX</p>
+                                <p class="dash-text">Number of doctors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade tab-user table-content" id="list-user" role="tabpanel">
+                    <div id="accordion">
+                        <div class="card">
+
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Users Information
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    <h3>Users Information</h3>
+                                    <table class="table">
+                                        <thead class="top-table">
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Username</th>
+                                                <th scope="col">Edit</th>
+                                                <th scope="col">Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="usersList">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="tab-pane fade table-content" id="list-doctor" role="tabpanel">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Create a doctor
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <form>
+                                        <h4>Doctor Profile</h4>
+                                        <div class="form-row">
+                                            <div class="col-4">
+                                                <input type="text" class="form-control" placeholder="First name" id="dfname">
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="text" class="form-control" placeholder="Last name" id="dlname">
+                                            </div>
+                                            <div class="col-4">
+                                                <input type="text" class="form-control" placeholder="Specialty" id="dspecialty">
+                                            </div>
+                                        </div>
+                                        <div class="form-row mt-3">
+                                            <textarea class="form-control col-5" id="dbio" rows="3"></textarea>
+                                            <div class="col-3 ml-2">
+                                                <input type="file" class="form-control-file" id="dphoto">
+                                            </div>
+                                        </div>
+
+                                        <h4 class="mt-3">Doctor Coordinates</h4>
+                                        <div class="form-row">
+                                            <div class="col-6">
+                                                <input type="text" class="form-control" placeholder="Latitude" id="dlat">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" class="form-control" placeholder="Longitude" id="dlong">
+                                            </div>
+                                        </div>
+                                        <button class="btn float-right mb-3 create-btn" id="createDoc">Create</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Doctors Information
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    <h3>Doctors Information</h3>
+                                    <table class="table">
+                                        <thead class="top-table">
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Specialty</th>
+                                                <th scope="col">Edit</th>
+                                                <th scope="col">Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="doctorsList">
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+
+        </div>
+
+        <!-- JS CDN -->
+        <script src="https://kit.fontawesome.com/2d2a841d14.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <!-- SCRIPTS -->
+        <script type="module" src="../js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome to Medify</title>
+    <!-- STYLESHEETS -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="../css/map.css">
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet" />
+    <link href="//db.onlinewebfonts.com/c/ef6bdf5ef216552c7e9869841e891ca0?family=Arial+Rounded+MT+Bold" rel="stylesheet" type="text/css" />
+
+    <!-- CDN / LIBRARIES -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- MAPS -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB163NVoJh5OJ05szB3ARsT4hvSwJAywQ"></script>
+</head>
+
+<body>
+    <!-- Loading Menu -->
+
+    <!--<div id="loaderPage">
+        <div class="logo text-center">
+            <span>medify</span>
+        </div>
+        <div class="loader-frame text-center">
+            <div class="loader1" id="loader1"></div>
+            <div class="loader2" id="loader2"></div>
+        </div>
+        <div class="slogan text-center">
+            <span>Take care of YOU</span>
+        </div>
+    </div>-->
+
+    <div id="callDoctor" style="display: none;">
+        <div class="container">
+            <div class="row panel">
+                <div class="col-md-4 bg_blur">
+                    <a href="#" id="callBtt" onclick="" class="follow_btn hidden-xs">Call</a>
+                </div>
+                <div class="col-md-8  col-xs-12 bgDoc">
+                    <img id="docImg" src="" class="img-thumbnail picture hidden-xs" />
+                    <div class="headerProfile">
+                        <h1 id="docName"></h1>
+                        <h4 id="docSpecialty"></h4>
+                        <span id="docBio"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">medify</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+          <span class="navbar-toggler-icon">
+            <i class="fas fa-bars" style="color:#fff; font-size:30px;"></i>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index.html">Find a doctor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/content/about.html">About us</a>
+                </li>
+            </ul>
+
+            <div class="dropdown">
+                <button class="btn dropdown-toggle profile-nav" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                </button>
+                <div id="dropdownElements" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a id="prfreg" class="dropdown-item" href="#"></a>
+                    <a id="loginout" class="dropdown-item" href="#"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Medic Menu -->
+    <div class="row" style="margin-top: 60px;">
+        <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2 form">
+            <div class="form-group">
+                <h2>Find a doctor</h2>
+                <div class="input-group mb-3">
+                    <input type="text" id="fdName" class="form-control" placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <input type="text" id="fdDist" class="form-control" placeholder="Distance (Km)">
+                </div>
+            </div>
+            <select class="custom-select form-control" id="fdSp"> 
+                <option value="" hidden>Choose by speciality</option>                   
+            </select>
+            <div class="button-form mb-4">
+                <button class="btn-destiny" id="filterDocs">Search</button>
+            </div>
+        </div>
+        <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+            <div id="map"></div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="page-footer font-small stylish-color-dark pt-4">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-4 mx-auto">
+
+                    <!-- Content -->
+                    <h5 class="footer-logo font-weight-bold text-uppercase mt-3 mb-4">medify</h5>
+                    <p>medify é uma aplicação web que te permitirá a receber uma consulta em sua casa. Um profissional de saúde espicializado no seu problema, está agora a um clique de distância de sua casa. </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-2 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="footer-head font-weight-bold text-uppercase mt-3 mb-4">Company</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="footer-anchor" href="/content/about.html">About us</a>
+                        </li>
+                        <li>
+                            <a class="footer-anchor" href="#!">Contact us</a>
+                        </li>
+                    </ul>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-2 mx-auto">
+
+                    <!-- Links -->
+                    <h5 class="footer-head font-weight-bold text-uppercase mt-3 mb-4">Profissionals</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a class="footer-anchor" href="#!">Join our team</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <!-- Grid row -->
+        </div>
+        <!-- Footer Links -->
+        <hr>
+
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+                <a href="https://www.youtube.com/watch?v=mO6nFn5ytVw&feature=youtu.be" class="btn-floating btn-gplus mx-1">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://github.com/NunoCosta13/Medify-II" class="btn-floating btn-li mx-1">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- Social buttons -->
+        <hr>
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">Copyright © 2020
+            <a class="footer-anchor" href="#"> medify</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog">
+    </div>
+
+    <!-- JS CDN -->
+    <script src="https://kit.fontawesome.com/2d2a841d14.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- SCRIPTS -->
+    <script src="js/styling.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
